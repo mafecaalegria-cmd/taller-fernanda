@@ -9,5 +9,17 @@ public class Ejercicio1 {
             System.err.println("a["+i+"]="+a[i]);
     }
     
+    int sumasPares =0, sumasImpares=0;
+        for (int i = 0; i < a.length; i++) {
+           if (a[i]%2==0) {
+            sumasPares -=a[i];
+
+            
+           }else{
+            sumasImpares +=a[i];
+
+           }
+           System.out.println("suma pares="+sumasPares+"suma impares="+sumasImpares);
 }
+    }
 }
