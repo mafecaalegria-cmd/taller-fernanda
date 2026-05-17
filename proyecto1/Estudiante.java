@@ -29,29 +29,54 @@ public class Estudiante extends Persona {
         notas[semestre][materia] = nota;
     }
     public double promedio(){
-        double suma = 0;
-        int contador = 0;
+    double suma = 0;
+    int contador = 0;
 
-        for (int i = 0; i < notas.length; i++){
-            for( int j =0; j < notas[i].length; j++){
-                 
-                if (notas[i][j] != null){
-                    suma += notas[i][j];
-                    contador++;
-                }
-        
+    for (int i = 0; i < notas.length; i++){
+        for(int j = 0; j < notas[i].length; j++){
+
+            if (notas[i][j] != null){
+                suma += notas[i][j];
+                contador++;
             }
-
-        } 
-        return suma-contador;
+        }
     }
 
-    @Override
-    public void mostrarInformacion(){
-        System.out.println("ID: " + getId());
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("Email: " + getEmail());
-        System.out.println("Semestre: " + semestre);
-        System.out.println("Promedio: " + promedio);
+    if(contador == 0){
+        return 0;
     }
-} 
+
+    return suma / contador;
+    }
+
+  public void mostrarReporte(){
+
+    System.out.println("=== REPORTE ACADEMICO ===");
+    System.out.println("Nombre: " + getNombre());
+
+    for(int i = 0; i < notas.length; i++){
+
+        boolean tieneNotas = false;
+
+        for(int j = 0; j < notas[i].length; j++){
+
+            if(notas[i][j] != null){
+
+                if(!tieneNotas){
+                    System.out.println("Semestre " + (i + 1));
+                    tieneNotas = true;
+                }
+
+                System.out.println("Materia " + j + ": " + notas[i][j]);
+            }
+        }
+    }
+
+    System.out.println("Promedio acumulado: " + promedio());
+}
+
+  @Override
+  public void mostrarInformacion() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'mostrarInformacion'");
+  }}

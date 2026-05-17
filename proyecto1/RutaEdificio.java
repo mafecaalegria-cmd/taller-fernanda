@@ -22,6 +22,7 @@ public class RutaEdificio {
         matriz[origen][destino] = distancia;
         matriz[destino][origen]= distancia;
     }
+    
     public void mostrarRuta(){
          for (int i = 0; i < matriz.length; i++){
             
@@ -30,5 +31,6 @@ public class RutaEdificio {
             }
             System.out.println();
          }
+         
     }
 }
