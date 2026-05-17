@@ -15,7 +15,6 @@ public class Main {
         RutaEdificio rutas = new RutaEdificio();
         BatchCSV batch = new BatchCSV();
  
-        // Materias disponibles (HashMap para búsqueda rápida en batch)
         HashMap<String, Materia> materias = new HashMap<>();
         Materia calc101 = new Materia("CALC101", "Calculo I", 3, 4);
         Materia prog101 = new Materia("PROG101", "Programacion I", 30, 3);
@@ -68,7 +67,7 @@ public class Main {
  
             switch (opcion) {
  
-                // ── GESTION DE ESTUDIANTES ──────────────────────────
+              
                 case 1:
                     System.out.print("Nombre: ");
                     String nombre = sc.nextLine();
