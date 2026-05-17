@@ -3,9 +3,7 @@ package proyecto1;
 import java.util.LinkedList;
 import java.util.Queue;
  
-/**
- * Representa una materia con cupos, prerequisitos y cola de espera.
- */
+
 public class Materia {
  
     private String codigo;
@@ -14,13 +12,11 @@ public class Materia {
     private int cuposOcupados;
     private int creditos;
  
-    // Lista enlazada para prerequisitos
+   
     private LinkedList<String> prerequisitos;
- 
-    // Cola de espera cuando no hay cupos
+
     private Queue<Estudiante> colaEspera;
  
-    // Estudiantes inscritos
     private LinkedList<Estudiante> inscritos;
  
     public Materia(String codigo, String nombre, int cuposMaximos, int creditos) {
@@ -34,7 +30,7 @@ public class Materia {
         this.inscritos = new LinkedList<>();
     }
  
-    // ── Getters ──────────────────────────────────────────
+
  
     public String getCodigo() { return codigo; }
     public String getNombre() { return nombre; }
@@ -43,7 +39,7 @@ public class Materia {
     public int getCreditos() { return creditos; }
     public LinkedList<String> getPrerequisitos() { return prerequisitos; }
  
-    // ── Prerequisitos ────────────────────────────────────
+    
  
     public void agregarPrerequisitos(String codigoPrereq) {
         prerequisitos.add(codigoPrereq);
@@ -62,9 +58,6 @@ public class Materia {
         }
     }
  
-    /**
-     * Verifica si el estudiante cumple los prerequisitos comparando su historial.
-     */
     public boolean cumplePrerequisitos(Estudiante e) {
         for (String prereq : prerequisitos) {
             if (!e.getHistorialMaterias().contains(prereq)) {
@@ -74,12 +67,7 @@ public class Materia {
         return true;
     }
  
-    // ── Inscripción ──────────────────────────────────────
- 
-    /**
-     * Inscribe un estudiante. Si no hay cupo, lo pone en cola de espera.
-     * Lanza excepción si no cumple prerequisitos.
-     */
+  
     public void inscribir(Estudiante e) throws PreRequisitoNoAprobadoException, CupoLlenoException {
         // Verificar prerequisitos
         if (!prerequisitos.isEmpty() && !cumplePrerequisitos(e)) {
@@ -99,9 +87,6 @@ public class Materia {
         }
     }
  
-    /**
-     * Cancela la inscripción y asigna el cupo al primero en la cola.
-     */
     public void cancelarInscripcion(Estudiante e) throws ColaDeEsperaVaciaException {
         if (inscritos.remove(e)) {
             cuposOcupados--;

@@ -6,22 +6,16 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
  
-/**
- * Procesamiento por lotes (batch) de inscripciones desde un archivo CSV.
- * Formato del CSV: idEstudiante,codigoMateria  (una por línea)
- */
+
 public class BatchCSV {
  
-    // Cola de solicitudes pendientes
+  
     private Queue<String[]> colaSolicitudes;
  
     public BatchCSV() {
         colaSolicitudes = new LinkedList<>();
     }
  
-    /**
-     * Lee el archivo CSV y encola todas las solicitudes.
-     */
     public void cargarArchivo(String rutaArchivo) throws ArchivoInvalidoException {
         colaSolicitudes.clear();
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
@@ -47,9 +41,7 @@ public class BatchCSV {
         }
     }
  
-    /**
-     * Procesa la cola de solicitudes intentando inscribir cada estudiante.
-     */
+   
     public void procesarCola(REstudiantes registro, java.util.HashMap<String, Materia> materias) {
         if (colaSolicitudes.isEmpty()) {
             System.out.println("La cola de solicitudes esta vacia.");

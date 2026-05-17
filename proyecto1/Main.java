@@ -3,10 +3,7 @@ package proyecto1;
 import java.util.HashMap;
 import java.util.Scanner;
  
-/**
- * Clase principal con menú interactivo completo.
- * Sistema de Gestión Académica y Planificación de Rutas de Aprendizaje.
- */
+
 
 public class Main {
  
@@ -25,7 +22,7 @@ public class Main {
         materias.put("CALC101", calc101);
         materias.put("PROG101", prog101);
  
-        // Aula por defecto para horarios
+      
         Aula aulaActual = new Aula("101");
  
         int opcion;
@@ -67,7 +64,7 @@ public class Main {
             System.out.print("\nSeleccione una opcion: ");
  
             opcion = sc.nextInt();
-            sc.nextLine(); // limpiar buffer
+            sc.nextLine(); 
  
             switch (opcion) {
  
@@ -209,7 +206,6 @@ public class Main {
                     aulaActual.consultar(dC, hC);
                     break;
  
-                // ── RUTAS ────────────────────────────────────────────
                 case 14:
                     rutas.mostrarEdificios();
                     System.out.print("Edificio origen (0-4): ");
@@ -230,7 +226,7 @@ public class Main {
                     rutas.calcularRutaMasCorta(o, d);
                     break;
  
-                // ── REPORTES ─────────────────────────────────────────
+          
                 case 16:
                     System.out.print("ID del estudiante: ");
                     int idNota = sc.nextInt(); sc.nextLine();
@@ -259,7 +255,6 @@ public class Main {
                     sistema.atrasReporte();
                     break;
  
-                // ── DESHACER/REHACER ──────────────────────────────────
                 case 19:
                     sistema.deshacer();
                     break;
@@ -268,7 +263,6 @@ public class Main {
                     sistema.rehacer();
                     break;
  
-                // ── BATCH CSV ─────────────────────────────────────────
                 case 21:
                     System.out.print("Ruta del archivo CSV (ej: inscripciones.csv): ");
                     String ruta = sc.nextLine();

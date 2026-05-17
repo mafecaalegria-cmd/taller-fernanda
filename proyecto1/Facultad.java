@@ -1,9 +1,6 @@
 package proyecto1;
  
-/**
- * Representa una Facultad de la universidad.
- * Se usa en un arreglo fijo Facultad[5].
- */
+
 public class Facultad {
  
     private String nombre;

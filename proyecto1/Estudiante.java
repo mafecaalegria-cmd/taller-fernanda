@@ -2,18 +2,14 @@ package proyecto1;
  
 import java.util.LinkedList;
  
-/**
- * Representa un estudiante. Hereda de Persona.
- * Contiene: arreglo Double[10][20] para notas, lista enlazada para historial.
- */
+
 public class Estudiante extends Persona {
  
     private int semestre;
  
-    // Arreglo nativo obligatorio Double[10][20]: 10 semestres x 20 materias
+
     private Double[][] notas;
- 
-    // Lista enlazada: historial de materias cursadas
+
     private LinkedList<String> historialMaterias;
  
     public Estudiante(String nombre, int id, String email, int semestre) {
@@ -23,23 +19,17 @@ public class Estudiante extends Persona {
         this.historialMaterias = new LinkedList<>();
     }
  
-    // ── Getters / Setters ─────────────────────────────────
  
     public int getSemestre() { return semestre; }
     public void setSemestre(int semestre) { this.semestre = semestre; }
     public LinkedList<String> getHistorialMaterias() { return historialMaterias; }
  
-    // ── Materias ──────────────────────────────────────────
  
     public void agregarMateria(String materia) {
         historialMaterias.add(materia);
     }
  
-    // ── Notas ─────────────────────────────────────────────
- 
-    /**
-     * Registra una nota. semIdx: 0-9, matIdx: 0-19.
-     */
+   
     public void registrarNota(int semIdx, int matIdx, double nota) {
         if (semIdx < 0 || semIdx >= 10 || matIdx < 0 || matIdx >= 20) {
             System.out.println("Error: Indice fuera de rango (semestre 0-9, materia 0-19).");
@@ -49,9 +39,7 @@ public class Estudiante extends Persona {
         System.out.println("Nota " + nota + " registrada en semestre " + (semIdx + 1) + ", materia " + (matIdx + 1));
     }
  
-    /**
-     * Calcula el promedio de un semestre específico (índice 0-9).
-     */
+    
     public double promedioSemestre(int semIdx) {
         double suma = 0;
         int count = 0;
@@ -64,9 +52,7 @@ public class Estudiante extends Persona {
         return count == 0 ? 0.0 : suma / count;
     }
  
-    /**
-     * Calcula el promedio acumulado de todos los semestres.
-     */
+    
     public double promedioAcumulado() {
         double suma = 0;
         int count = 0;
@@ -81,9 +67,7 @@ public class Estudiante extends Persona {
         return count == 0 ? 0.0 : suma / count;
     }
  
-    /**
-     * Genera el reporte académico completo del estudiante.
-     */
+   
     public void reporteAcademico() {
         System.out.println("\n--- REPORTE ACADEMICO ---");
         System.out.println("Estudiante: " + getNombre() + " (ID: " + getId() + ")");
