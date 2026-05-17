@@ -2,9 +2,6 @@ package proyecto1;
  
 import java.util.LinkedList;
 import java.util.Queue;
-import proyecto.excepciones.CupoLlenoException;
-import proyecto.excepciones.ColaDeEsperaVaciaException;
-import proyecto.excepciones.PreRequisitoNoAprobadoException;
  
 /**
  * Representa una materia con cupos, prerequisitos y cola de espera.

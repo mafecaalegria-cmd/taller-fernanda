@@ -1,4 +1,4 @@
-package proyecto.excepciones;
+package proyecto1;
  
 public class PilaDeshacerVaciaException extends Exception {
     public PilaDeshacerVaciaException(String mensaje) {

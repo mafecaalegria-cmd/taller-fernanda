@@ -7,6 +7,7 @@ import java.util.Scanner;
  * Clase principal con menú interactivo completo.
  * Sistema de Gestión Académica y Planificación de Rutas de Aprendizaje.
  */
+
 public class Main {
  
     public static void main(String[] args) {

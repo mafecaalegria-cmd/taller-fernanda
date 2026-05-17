@@ -2,7 +2,6 @@ package proyecto1;
  
 import java.util.HashMap;
 import java.util.TreeMap;
-import proyecto.excepciones.EstudianteNoEncontradoException;
  
 /**
  * Registro de estudiantes usando HashMap para búsqueda rápida por ID.

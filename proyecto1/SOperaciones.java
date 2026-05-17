@@ -1,7 +1,6 @@
 package proyecto1;
  
 import java.util.Stack;
-import proyecto.excepciones.PilaDeshacerVaciaException;
  
 /**
  * Sistema de deshacer/rehacer usando dos pilas.
