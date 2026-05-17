@@ -1,4 +1,4 @@
-package proyecto.excepciones;
+package proyecto1;
  
 public class ColaDeEsperaVaciaException extends Exception {
     public ColaDeEsperaVaciaException(String mensaje) {

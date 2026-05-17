@@ -1,11 +1,6 @@
 package proyecto1;
  
-import proyecto.excepciones.HorarioConflictivoException;
- 
-/**
- * Gestiona la disponibilidad de un aula usando una matriz boolean[7][24].
- * Filas = días (0=Domingo ... 6=Sábado), Columnas = horas (0-23).
- */
+
 public class Aula {
  
     private String nombre;

@@ -2,7 +2,6 @@ package proyecto1;
  
 import java.util.HashMap;
 import java.util.Scanner;
-import proyecto.excepciones.*;
  
 /**
  * Clase principal con menú interactivo completo.
